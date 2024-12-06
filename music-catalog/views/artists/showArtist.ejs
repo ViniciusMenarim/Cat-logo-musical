@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Artista</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Musical</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/api/artists">Artistas</a>
+        <a href="/api/albums">Álbuns</a>
+        <a href="/api/genres">Gêneros</a>
+    </nav>
+
+    <h2>Detalhes do Artista</h2>
+    <p><strong>Nome:</strong> <%= artist.name %></p>
+    <p><strong>Gênero:</strong> <%= artist.genre %></p>
+
+    <a href="/api/artists/<%= artist.id %>/edit">Editar</a>
+    <form action="/api/artists/<%= artist.id %>/delete" method="POST" style="display:inline;">
+        <button type="submit">Excluir</button>
+    </form>
+</body>
+</html>

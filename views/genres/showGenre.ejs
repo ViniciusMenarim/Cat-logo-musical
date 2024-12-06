@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Gênero</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Musical</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/api/genres">Gêneros</a>
+        <a href="/api/albums">Álbuns</a>
+        <a href="/api/artists">Artistas</a>
+    </nav>
+
+    <h2>Detalhes do Gênero</h2>
+    <p><strong>Nome:</strong> <%= genre.name %></p>
+
+    <a href="/api/genres/<%= genre.id %>/edit">Editar</a>
+    <form action="/api/genres/<%= genre.id %>/delete" method="POST" style="display:inline;">
+        <button type="submit">Excluir</button>
+    </form>
+</body>
+</html>
