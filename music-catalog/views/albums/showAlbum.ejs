@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Álbum</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Musical</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/api/albums">Álbuns</a>
+        <a href="/api/artists">Artistas</a>
+        <a href="/api/genres">Gêneros</a>
+    </nav>
+
+    <h2>Detalhes do Álbum</h2>
+    <p><strong>Título:</strong> <%= album.title %></p>
+    <p><strong>Ano de Lançamento:</strong> <%= album.year %></p>
+    <p><strong>Capa:</strong> <%= album.cover %></p>
+    <p><strong>Faixas:</strong> <%= album.tracks %></p>
+
+    <a href="/api/albums/<%= album.id %>/edit">Editar</a>
+    <form action="/api/albums/<%= album.id %>/delete" method="POST" style="display:inline;">
+        <button type="submit">Excluir</button>
+    </form>
+</body>
+</html>

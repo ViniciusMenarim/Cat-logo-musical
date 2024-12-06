@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Gênero</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Musical</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/api/genres">Gêneros</a>
+        <a href="/api/albums">Álbuns</a>
+        <a href="/api/artists">Artistas</a>
+    </nav>
+
+    <h2>Cadastrar Novo Gênero</h2>
+
+    <form action="/api/genres" method="POST">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <button type="submit">Cadastrar Gênero</button>
+    </form>
+</body>
+</html>

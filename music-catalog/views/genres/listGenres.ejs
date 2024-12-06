@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Gêneros</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Musical</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/api/genres/new">Cadastrar Novo Gênero</a>
+        <a href="/api/albums">Álbuns</a>
+        <a href="/api/artists">Artistas</a>
+    </nav>
+
+    <h2>Gêneros</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% genres.forEach(genre => { %>
+                <tr>
+                    <td><%= genre.name %></td>
+                    <td>
+                        <a href="/api/genres/<%= genre.id %>">Ver Detalhes</a>
+                        <a href="/api/genres/<%= genre.id %>/edit">Editar</a>
+                        <form action="/api/genres/<%= genre.id %>/delete" method="POST" style="display:inline;">
+                            <button type="submit">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

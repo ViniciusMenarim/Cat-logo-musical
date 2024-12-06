@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Álbum</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Musical</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/api/albums">Álbuns</a>
+        <a href="/api/artists">Artistas</a>
+        <a href="/api/genres">Gêneros</a>
+    </nav>
+
+    <h2>Cadastrar Novo Álbum</h2>
+
+    <form action="/api/albums" method="POST">
+        <label for="title">Título:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="year">Ano de Lançamento:</label>
+        <input type="number" id="year" name="year" required>
+
+        <label for="cover">Capa do Álbum:</label>
+        <input type="text" id="cover" name="cover">
+
+        <label for="tracks">Número de Faixas:</label>
+        <input type="number" id="tracks" name="tracks">
+
+        <button type="submit">Cadastrar Álbum</button>
+    </form>
+</body>
+</html>

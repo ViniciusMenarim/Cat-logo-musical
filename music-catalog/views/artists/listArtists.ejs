@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Artistas</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Catálogo Musical</h1>
+    </header>
+
+    <nav>
+        <a href="/">Início</a>
+        <a href="/api/artists/new">Cadastrar Novo Artista</a>
+        <a href="/api/albums">Álbuns</a>
+        <a href="/api/genres">Gêneros</a>
+    </nav>
+
+    <h2>Artistas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Gênero</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% artists.forEach(artist => { %>
+                <tr>
+                    <td><%= artist.name %></td>
+                    <td><%= artist.genre %></td>
+                    <td>
+                        <a href="/api/artists/<%= artist.id %>">Ver Detalhes</a>
+                        <a href="/api/artists/<%= artist.id %>/edit">Editar</a>
+                        <form action="/api/artists/<%= artist.id %>/delete" method="POST" style="display:inline;">
+                            <button type="submit">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>
